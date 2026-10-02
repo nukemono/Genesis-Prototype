@@ -1,0 +1,468 @@
+<!doctype html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Project Genesis — 小さな営み</title><style>:root{--ink:#263f35;--muted:#647368;--paper:#f6f4ed;--panel:#fffdf7;--line:#dedfd1;--green:#3e614d;--gold:#c28c48}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:'Yu Gothic','Hiragino Kaku Gothic ProN',system-ui,sans-serif;font-size:14px}header{max-width:1440px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:25px 42px;border-bottom:1px solid var(--line)}.brand{display:flex;gap:13px;align-items:center}.sigil{border:1px solid var(--green);border-radius:50%;width:40px;height:40px;display:grid;place-items:center;font-family:Georgia,serif;font-size:25px}.brand b{letter-spacing:3px;font-size:13px}.brand small{display:block;font-size:10px;color:var(--muted);margin-top:5px}.build{font-size:12px}.build span,.pill{background:#e9eedf;border-radius:20px;padding:6px 11px;font-size:11px;white-space:nowrap}.build span{margin-left:12px}main{max-width:1356px;margin:auto;padding:34px 30px}.top{display:flex;justify-content:space-between;align-items:center;padding:0 5px 27px}.eyebrow,.sectionhead small{font-size:10px;letter-spacing:2px;color:var(--muted)}h1{font-size:32px;line-height:1.65;font-weight:500;margin:10px 0}p{line-height:1.9;color:var(--muted)}.top p{margin:10px 0 0}.clock{text-align:right;padding:0 10px}.clock span,.clock small{display:block;color:var(--muted)}.clock strong{font-family:Georgia,serif;font-size:60px;font-weight:400;display:block;margin:6px 0}.toolbar{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding:17px 0 12px}.toolbar>div{display:flex;gap:7px;align-items:center;flex-wrap:wrap}button,select,input,.filebutton{font:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:9px 11px}button,.filebutton{cursor:pointer}button:hover,.filebutton:hover{border-color:var(--green);background:#edf0e5}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:3px}button:disabled{opacity:.42;cursor:default}.primary{background:var(--green);color:white;border-color:var(--green)}.primary:hover{background:#294b37}.filebutton input{display:none}#feedback{min-height:43px;font-size:12px;padding:10px 0;color:var(--green)}#feedback.error{color:#9b4632}.layout{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(300px,1fr);gap:22px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:24px}.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:18px}h2{font-size:19px;font-weight:500;margin:7px 0 0}h3{font-size:14px;margin:18px 0 8px}.number{font-family:Georgia,serif;font-size:40px;color:#cdd4c4}#map{background:#e8edde;border-radius:8px;overflow:hidden}#map svg{width:100%;height:auto;display:block}.place{cursor:pointer}.place rect:hover{stroke:#344d32;stroke-width:2}.mapnote{display:flex;gap:15px;align-items:center;margin:15px 0;font-size:10px;color:var(--muted)}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}.player{background:var(--gold)}.npc{background:var(--green)}.metrics{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);padding-top:17px;gap:10px}.metrics small{display:block;font-size:10px;color:var(--muted)}.metrics b{display:block;margin-top:9px;font-size:23px;font-weight:400}.observation-note{font-size:10px;margin:17px 0 0}.situation{padding:13px;background:#f2eddd;border-left:3px solid var(--gold);line-height:1.8;margin-bottom:15px;font-size:12px}.guide{display:flex;width:100%;align-items:center;gap:12px;margin:9px 0;text-align:left;padding:14px;background:#edf0e5}.guide>span:last-child{margin-left:auto}.guide b{font-size:13px;font-weight:500}.guide small{display:block;font-size:10px;color:var(--muted);margin-top:5px}.icon{font-size:26px;color:#668163}.muted{font-size:11px;color:var(--muted);line-height:1.8}.divider{height:1px;background:var(--line);margin:18px 0}.row{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}.row button{font-size:11px;padding:7px 9px}.selectlabel{display:block;font-size:11px;margin-top:13px}select{max-width:100%}.selectlabel select{display:block;width:100%;margin-top:7px;font-size:11px}.inventory-item{display:flex;align-items:center;justify-content:space-between;gap:4px;padding:8px 0;border-bottom:1px solid var(--line);font-size:11px}.inventory-item button{font-size:10px;padding:5px 7px;margin-left:3px}.residents{margin-top:22px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{padding:14px;background:#f3f4eb;border-radius:6px;min-height:123px}.card b{font-size:14px}.card .jobtag{float:right;color:var(--muted);font-size:10px}.card p{font-size:11px;margin:12px 0 8px;color:var(--ink);min-height:32px}.card small{font-size:10px;color:var(--muted)}.bottom{display:grid;grid-template-columns:1.35fr 1fr;gap:22px;margin-top:22px}#log{list-style:none;padding:0;margin:0;height:250px;overflow:auto}#log li{font-size:11px;line-height:1.8;padding:9px 0;border-bottom:1px solid var(--line)}#log time{color:#8c957d;font-variant-numeric:tabular-nums;margin-right:12px}.experiment p{font-size:12px}.experiment label{display:block;font-size:11px;margin:10px 0}.experiment input,.experiment select{display:block;width:100%;margin-top:7px}.experiment>button{width:100%;margin-top:6px}details{margin-top:18px;font-size:11px}summary{cursor:pointer}pre{max-height:260px;overflow:auto;white-space:pre-wrap;word-break:break-all;font-size:10px}footer{text-align:center;font-size:10px;color:#849080;line-height:2;margin:30px 0 0}@media(min-width:1100px){.world{align-self:start}#map svg{min-height:390px}}@media(max-width:900px){main{padding:20px 16px}header{padding:20px}.layout{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.bottom{grid-template-columns:1fr}.world{padding:18px}h1{font-size:25px}.clock strong{font-size:44px}.build{display:none}}@media(max-width:450px){.clock{padding:0}.clock strong{font-size:32px}.clock small{font-size:9px}.top h1{font-size:21px}.top p{font-size:11px}.panel{padding:17px}.toolbar button,.filebutton,.toolbar select{font-size:11px}.mapnote{gap:8px}.metrics b{font-size:20px}}
+#comparison:empty{display:none}#comparison{margin-top:14px;padding:12px;border:1px solid var(--line);border-radius:6px;background:#f3f4eb}#comparison p{margin:0 0 8px;font-size:11px}#comparison p:last-child{margin:8px 0 0}.comparison-scroll{overflow-x:auto}#comparison table{width:100%;border-collapse:collapse;font-size:11px;white-space:nowrap}#comparison th,#comparison td{text-align:left;padding:7px 5px;border-bottom:1px solid var(--line)}#comparison th{font-weight:500}
+
+.workshop-progress{margin-top:19px;padding:13px 15px;background:#f2f2e7;border-radius:8px;border:1px solid #dedfc8}.progress-top{display:flex;justify-content:space-between;gap:12px;align-items:baseline;font-size:12px}.progress-top b{font-weight:500}.progress-top span{color:#456e52}.progress-track{height:8px;margin:10px 0;background:#dfdfcf;border-radius:20px;overflow:hidden}.progress-track span{display:block;height:100%;width:0;background:#628866;border-radius:20px;transition:width .35s}.workshop-progress small{font-size:10px;color:var(--muted)}
+
+.map-actor{pointer-events:none}.map-actor.memory{opacity:.32}.speech rect,.speech path{fill:#fffdf7;stroke:#9eb49b;stroke-width:1.5}.speech text{fill:#314c38;font-size:11px;font-weight:600}.need{display:grid;grid-template-columns:29px minmax(40px,1fr) 24px;align-items:center;gap:6px;margin-top:8px;font-size:10px;color:var(--muted)}.need strong{font-size:10px;font-weight:500;text-align:right;font-variant-numeric:tabular-nums}.need-track{height:8px;border-radius:10px;background:#e5e2d7;overflow:hidden}.need-track span{display:block;height:100%;border-radius:10px;transition:width .4s ease-out}.need-track .hunger{background:#ca9954}.need-track .fatigue{background:#668495}.need.unknown{opacity:.55}#playerNeeds{margin:9px 0 13px}.card .need{margin-top:7px}@media(prefers-reduced-motion:reduce){.need-track span,.progress-track span{transition:none}}
+.road-state{padding:9px 12px;margin:12px 0 0;border-left:3px solid #82969b;background:#eef1eb;font-size:11px;line-height:1.6}
+</style></head><body>
+<header><div class="brand"><span class="sigil">G</span><div><b>PROJECT GENESIS</b><small>小さな営みから、世界をつくる</small></div></div><div class="build">P0 · 観察と介入 <span>試遊版</span></div></header>
+<main><section class="top"><div><div class="eyebrow">川辺の集落 / 01</div><h1>あなたがいなくても、<br>暮らしは続いている。</h1><p>まず眺めて、ひとつ手を貸してみる。<br>そのあと、住民の行動はどう変わるでしょう。</p></div><div class="clock"><span id="day">1日目</span><strong id="clock">08:00</strong><small id="weather">晴れ · 一時停止中</small></div></section>
+<section class="toolbar" aria-label="時間操作"><div><button id="play" class="primary">▶ 時間を進める</button><button id="step">1刻進める</button><button id="step10">10刻進める</button><select id="speed" aria-label="進む速さ"><option value="900">ゆっくり</option><option value="250">速く</option></select></div><div><button id="save">保存</button><button id="load">読込</button><button id="export">セーブを書出す</button><label class="filebutton">セーブを開く<input id="import" type="file" accept="application/json,.json"></label></div></section>
+<div id="feedback" role="status" aria-live="polite">時間は止まっています。「時間を進める」で住民の暮らしを観察できます。</div>
+<div class="layout"><section class="world panel"><div class="sectionhead"><div><small>OBSERVE</small><h2>今日の集落</h2></div><span class="pill" id="position">あなた：広場</span></div><div id="map" aria-label="集落の地図"></div><div class="mapnote"><span><i class="dot player"></i>あなた</span><span><i class="dot npc"></i>住民</span><span>場所を押すと、そこへ移動</span></div><div class="metrics"><div><small>見えている食料</small><b id="foodCount">0個</b></div><div><small>工房の木材</small><b id="woodCount">0個</b></div><div><small>工房の修繕</small><b id="repairCount">0/3</b></div></div><div class="workshop-progress" aria-live="polite"><div class="progress-top"><b>工房の様子</b><span id="workshopState">傷んだ屋根</span></div><div class="progress-track"><span id="workshopFill"></span></div><small id="workshopHint">木材2個と道具で1段階ずつ直ります。</small></div><p id="roadState" class="road-state" aria-live="polite"></p><p class="observation-note">道にいる住民も動きます。吹き出しは見えた行動と体調からの短い推測です。遠い場所・体調のメーターは最後に見た時点の記録です。</p></section>
+<aside class="panel intervention"><div class="sectionhead"><div><small>INTERVENE</small><h2>ひとつ、手を貸す</h2></div><span class="number">02</span></div><div id="situation" class="situation"></div><button id="foodGuide" class="guide"><span class="icon">◒</span><span><b>食料を届ける</b><small>共同台所へ3個を提供</small></span><span>→</span></button><button id="woodGuide" class="guide"><span class="icon">▤</span><span><b>木材を運ぶ</b><small>工房へ2個を提供</small></span><span>→</span></button><p class="muted">案内は移動から提供まで行います。<br>実行後は時間を進め、アキの行動を見てみましょう。</p><div class="divider"></div><h3>自分で試す</h3><p id="playerState" class="muted"></p><div id="playerNeeds"></div><div id="inventory"></div><button id="boardRoad" class="guide"><span class="icon">▥</span><span><b>低地道に板を敷く</b><small>広場か工房で木材1個・作業2刻。雨中の通行で傷む</small></span><span>→</span></button><label class="selectlabel">いまの場所にある物<select id="ground" aria-label="いまの場所にある物"></select></label><div class="row"><button id="take">1個拾う</button><button id="eatGround">1個食べる</button></div><label class="selectlabel">この場所の仕事<select id="job" aria-label="仕事"><option value="forage">果樹園で食料を採集</option><option value="timber">林で木材を切り出す</option><option value="repair">工房を修繕する</option></select></label><div class="row"><button id="work">作業する</button><button id="rest">休む</button><button id="cancel">案内を解除</button></div></aside></div>
+<section class="panel residents"><div class="sectionhead"><div><small>WORLD REACTS</small><h2>住民のいま</h2></div><span class="muted">行動の変化を、見つける。</span></div><div id="residents" class="cards"></div></section>
+<div class="bottom"><section class="panel"><div class="sectionhead"><div><small>FIELD NOTES</small><h2>あなたが見た出来事</h2></div><span class="pill">目撃した記録だけ</span></div><ol id="log"></ol></section><section class="panel experiment"><div class="sectionhead"><div><small>TRY AGAIN</small><h2>同じ朝から、別の選択</h2></div></div><p>同じseed・場面なら同じ朝に戻ります。一度は何もせず、もう一度は手を貸して、違いを比べてください。</p><label>場面<select id="scenario"><option value="food">① 食料不足とアキの空腹</option><option value="wood">② 工房の木材不足</option></select></label><label>世界のseed<input id="seed" type="number" value="20260925" min="0" max="4294967295"></label><button id="reset">この条件で最初から</button><p class="muted">最初から始めると現在の進行は失われます。必要なら先に保存してください。</p><button id="compare">同じ朝の結果を比べる</button><div id="comparison" aria-live="polite"></div><p class="muted">比較は選んだseedと場面から別々に計算します。いま遊んでいる世界やセーブには影響しません。</p><details><summary>開発用：内部状態を見る</summary><p>この表示には住民が知らない情報も含みます。通常の観測ログとは別です。</p><pre id="debug"></pre></details></section></div>
+<footer>Project Genesis · 暫定の2Dプロトタイプ / P0の初見試遊は未判定<br>通信なし・アカウント不要。保存はこの端末内だけで行います。</footer></main>
+<script>/* Project Genesis P0. Pure simulation, no DOM, network or wall clock. */
+(function (root) {
+'use strict';
+const BUILD = 'genesis-p0.1.5';
+const WORKSHOP_TARGET = 3;
+const LOW_ROAD = 'square|workshop';
+const BOARD_STRENGTH = 3;
+const PLACES = {
+ square:{name:'広場',x:45,y:52,links:['kitchen','workshop','home','forest','orchard']},
+ kitchen:{name:'共同台所',x:24,y:26,links:['square','workshop']},
+ workshop:{name:'工房',x:66,y:27,links:['square','kitchen']},
+ home:{name:'休憩所',x:24,y:77,links:['square']},
+ forest:{name:'林',x:83,y:67,links:['square']},
+ orchard:{name:'果樹園',x:8,y:49,links:['square']}
+};
+const JOBS = {
+ forage:{name:'食料を採集',site:'orchard',duration:4,source:'food',yield:3},
+ timber:{name:'木材を切り出す',site:'forest',duration:5,source:'wood',yield:3,tool:'cutting'},
+ repair:{name:'工房を修繕',site:'workshop',duration:4,input:'wood',amount:2,tool:'cutting'}
+};
+const ITEMS = {food:{name:'食料',mass:1,nutrition:55},wood:{name:'木材',mass:2},tool:{name:'のこぎり',mass:2,capability:'cutting'}};
+const clone = x => JSON.parse(JSON.stringify(x));
+const fail = reason => ({ok:false,status:'FAIL',reason,diff:[]});
+function random(w) { w.rng=(Math.imul(w.rng,1664525)+1013904223)>>>0;return w.rng/4294967296; }
+function placeOf(w,e) { return w.actors[e.holder]?.place || e.place; }
+function visible(from,to){return from===to||PLACES[from].links.includes(to);}
+function roadKey(from,to){return [from,to].sort().join('|');}
+function roads(){return {[LOW_ROAD]:{wet:false,planks:0,wear:0,crossings:0}};}
+function roadCost(w,from,to){const r=w.roads?.[roadKey(from,to)];return r?.wet&&!r.planks?5:2;}
+function seen(w,a,e) { return !e.hidden && (e.holder===a.id || visible(a.place,placeOf(w,e)) && !e.holder); }
+function accessible(w,a,e) { return e && !e.hidden && (e.holder===a.id || !e.holder && e.place===a.place) && (e.owner==='public'||e.owner===a.id); }
+function mass(w,a) { return w.items.filter(e=>e.holder===a.id).reduce((s,e)=>s+e.qty*e.mass,0); }
+function stack(w,kind,qty,place,holder=null,owner='public') {
+ const props=ITEMS[kind];
+ const old=w.items.find(e=>e.kind===kind&&e.place===place&&e.holder===holder&&e.owner===owner&&!e.hidden);
+ if(old) {old.qty+=qty;return old;}
+ const e={id:'item-'+w.nextId++,kind,...props,qty,place,holder,owner,hidden:false}; w.items.push(e);return e;
+}
+function emit(w,actor,type,text,extra={}) {
+ const a=w.actors[actor];
+ const witnesses=Object.values(w.actors).filter(o=>o.id===actor||a&&visible(o.place,a.place)).map(o=>o.id);
+ const e={id:w.nextEvent++,tick:w.tick,actor,type,text,witnesses,...extra};
+ w.events.push(e);if(w.events.length>240)w.events.shift();return e;
+}
+function createWorld(seed=20260925,scenario='food') {
+ if(!Number.isInteger(seed)||seed<0||seed>0xffffffff)throw Error('seedは0〜4294967295の整数');
+ if(!['food','wood'].includes(scenario))throw Error('シナリオが不正');
+ const w={schema_version:1,build:BUILD,seed,rng:seed,scenario,tick:0,nextId:1,nextEvent:1,actors:{},items:[],events:[],roads:roads(),sources:{food:240,wood:240},consumed:{food:0,wood:0},repair:0};
+ const names=[['player','あなた','visitor','square'],['aki','アキ','builder','workshop'],['mio','ミオ','carrier','kitchen'],['ren','レン','logger','forest'],['hana','ハナ','gatherer','orchard']];
+ for(const [id,name,role,place] of names)w.actors[id]={id,name,role,place,capacity:12,health:100,hunger:id==='aki'?(scenario==='food'?72:12):12+Math.floor(random(w)*8),fatigue:0,pending:null,queue:[],beliefs:{},status:'周囲を観察',reason:'自分で次の行動を選びます'};
+ stack(w,'food',6,null,'player','player');stack(w,'wood',3,null,'player','player');
+ stack(w,'tool',1,'workshop');stack(w,'tool',1,'forest');
+ observe(w);return w;
+}
+function observe(w) {
+ for(const a of Object.values(w.actors))for(const p of [a.place,...PLACES[a.place].links]){
+ const items=w.items.filter(e=>seen(w,a,e)&&placeOf(w,e)===p).map(e=>clone(e));
+ a.beliefs[p]={tick:w.tick,items,actors:Object.values(w.actors).filter(o=>o.place===p).map(o=>({id:o.id,name:o.name,place:o.place,status:o.status,hunger:o.hunger,fatigue:o.fatigue,health:o.health,moveTo:o.pending?.command.type==='move'?o.pending.command.to:null,moveRemaining:o.pending?.command.type==='move'?o.pending.remaining:null,moveDuration:o.pending?.command.type==='move'?o.pending.duration??2:null})),roads:Object.fromEntries(PLACES[p].links.map(to=>[to,{cost:roadCost(w,p,to),wet:!!w.roads[roadKey(p,to)]?.wet,planks:w.roads[roadKey(p,to)]?.planks??0,wear:w.roads[roadKey(p,to)]?.wear??0,crossings:w.roads[roadKey(p,to)]?.crossings??0}])),repair:p==='workshop'?w.repair:null,source:w.sources[p==='orchard'?'food':p==='forest'?'wood':'']??null};
+ }
+}
+function available(w,a,kind) {return w.items.filter(e=>accessible(w,a,e)&&e.kind===kind).reduce((s,e)=>s+e.qty,0);}
+function consume(w,a,kind,qty){
+ for(const e of w.items.filter(e=>accessible(w,a,e)&&e.kind===kind)){const n=Math.min(qty,e.qty);e.qty-=n;qty-=n;if(qty===0)break;}
+ w.items=w.items.filter(e=>e.qty>0);w.consumed[kind]+=arguments[3];
+}
+function validate(w,c,completion=false){
+ if(!c||typeof c!=='object')return '行為が不正です';
+ const a=w.actors[c.actor];if(!a)return '主体が存在しません';
+ if(a.pending&&!completion)return 'いまの行動が終わるまで待ってください';
+ if(a.health<=0)return '行動できる体調ではありません';
+ if(c.type==='move')return PLACES[a.place].links.includes(c.to)?null:'隣接する場所だけへ移動できます';
+ if(c.type==='layBoards'){
+  if(c.road!==LOW_ROAD||!['square','workshop'].includes(a.place))return '低地道の端で作業してください';
+  if(w.roads[LOW_ROAD].planks)return 'この道にはすでに板が敷かれています';
+  if(a.health<35||a.hunger>=85||a.fatigue>=90)return '体調を整えてから道を直してください';
+  return available(w,a,'wood')>=1?null:'木材が1個必要です';
+ }
+ if(c.type==='rest'||c.type==='wait')return null;
+ if(c.type==='work'){
+ const j=JOBS[c.job];if(!j)return '未定義の仕事です';
+ if(a.place!==j.site)return PLACES[j.site].name+'へ移動してください';
+ if(c.job==='repair'&&w.repair>=WORKSHOP_TARGET)return '工房の修繕は完了しています';
+ if(a.health<35)return '負傷のため作業できません。休息してください';
+ if(a.hunger>=85)return '空腹が強すぎます。まず食事が必要です';
+ if(a.fatigue>=90)return '疲労が強すぎます。休息が必要です';
+ if(j.tool&&!w.items.some(e=>accessible(w,a,e)&&e.capability===j.tool))return '切断できる道具がこの場所にありません';
+ if(j.input&&available(w,a,j.input)<j.amount)return '木材が2個必要です';
+ if(j.source&&w.sources[j.source]<j.yield)return '採集できる資源が残っていません';
+ if(j.source&&mass(w,a)+j.yield*ITEMS[j.source].mass>a.capacity)return '荷物が重すぎます。置いてから作業してください';
+ return null;
+ }
+ const e=w.items.find(e=>e.id===c.item);
+ if(!e)return '物資が見つかりません。誰かが移動・消費した可能性があります';
+ if(!Number.isInteger(c.qty)||c.qty<=0||c.qty>e.qty)return '数量は在庫以内の正の整数にしてください';
+ if(!accessible(w,a,e))return 'その物資には届かないか、使用する権限がありません';
+ if(c.type==='take'){
+ if(e.holder)return 'すでに誰かが運んでいます';
+ return mass(w,a)+e.mass*c.qty>a.capacity?'運搬上限12kgを超えています':null;
+ }
+ if(c.type==='drop')return e.holder===a.id?null:'自分が持っている物だけ置けます';
+ if(c.type==='give'){
+ if(e.holder!==a.id||e.owner!==a.id)return '寄付・譲渡は自分の所持品で行ってください';
+ if(c.to==='public')return null;
+ const b=w.actors[c.to];if(!b||b.place!==a.place||b.id===a.id)return '相手と同じ場所にいる必要があります';
+ return mass(w,b)+e.mass*c.qty>b.capacity?'相手がこれ以上持てません':null;
+ }
+ if(c.type==='eat')return e.nutrition&&c.qty===1?null:'一度に食べられる食料1個を選んでください';
+ return '未実装の行為です';
+}
+function apply(w,c){
+ const a=w.actors[c.actor];
+ if(c.type==='move') {
+  if(roadKey(a.place,c.to)===LOW_ROAD){const r=w.roads[LOW_ROAD];r.crossings++;
+   if(r.wet&&r.planks){r.wear++;if(r.wear>=BOARD_STRENGTH){r.planks=0;emit(w,a.id,'road','雨中の通行で低地道の板が傷み、外れた');}}
+  }
+  a.place=c.to;return PLACES[c.to].name+'へ到着';
+ }
+ if(c.type==='layBoards'){consume(w,a,'wood',1);w.roads[LOW_ROAD].planks=1;w.roads[LOW_ROAD].wear=0;return '木材1個で低地道に板を敷いた';}
+ if(c.type==='rest'){a.fatigue=Math.max(0,a.fatigue-32);a.health=Math.min(100,a.health+12);return '休息して体調を整えた';}
+ if(c.type==='wait')return '周囲を観察した';
+ if(c.type==='work'){
+ const j=JOBS[c.job];
+ if(j.input){consume(w,a,j.input,j.amount);w.repair++;}
+ if(j.source){w.sources[j.source]-=j.yield;stack(w,j.source,j.yield,null,a.id,a.id);}
+ a.fatigue=Math.min(100,a.fatigue+12);return j.name+'した'+(j.source?'（'+j.yield+'個）':'（木材2個を使用）');
+ }
+ const e=w.items.find(e=>e.id===c.item);
+ if(c.type==='eat'){e.qty--;a.hunger=Math.max(0,a.hunger-e.nutrition);w.consumed.food++;w.items=w.items.filter(e=>e.qty>0);return '食事をした。空腹が和らいだ';}
+ const kind=e.kind;const owner=e.owner;e.qty-=c.qty;w.items=w.items.filter(e=>e.qty>0);
+ if(c.type==='take'){stack(w,kind,c.qty,null,a.id,owner);return ITEMS[kind].name+c.qty+'個を運び始めた';}
+ if(c.type==='drop'){stack(w,kind,c.qty,a.place,null,owner);return ITEMS[kind].name+c.qty+'個を置いた（所有権は維持）';}
+ if(c.type==='give'){
+ stack(w,kind,c.qty,c.to==='public'?a.place:null,c.to==='public'?null:c.to,c.to);
+ return ITEMS[kind].name+c.qty+'個を'+(c.to==='public'?'共同備蓄':w.actors[c.to].name)+'へ提供した';
+ }
+}
+function command(w,c){
+ const reason=validate(w,c);if(reason)return fail(reason);
+ const a=w.actors[c.actor];const before=clone({actor:a,items:w.items,repair:w.repair,roads:w.roads,sources:w.sources,consumed:w.consumed});
+ const durations={rest:4,wait:1,layBoards:2};const duration=c.type==='work'?JOBS[c.job].duration:c.type==='move'?roadCost(w,a.place,c.to):durations[c.type];
+ if(duration){a.pending={command:clone(c),remaining:duration,duration};a.status=c.type==='move'?PLACES[c.to].name+'へ移動中':c.type==='work'?JOBS[c.job].name+'中':c.type==='layBoards'?'低地道に板を敷いている':c.type==='rest'?'休息中'+(c.reason?'（'+c.reason+'）':''):'観察中';emit(w,a.id,'start',a.name+'：'+a.status);}
+ else{const message=apply(w,c);a.status=message;emit(w,a.id,c.type,a.name+'：'+message);}
+ observe(w);
+ return {ok:true,status:'PASS',reason:duration?'開始しました':a.status,diff:[{before,after:clone({actor:a,items:w.items,repair:w.repair,roads:w.roads,sources:w.sources,consumed:w.consumed})}]};
+}
+function path(from,to,beliefs={}){
+ const best={[from]:0},queue=[{at:from,cost:0,steps:[]}];
+ while(queue.length){queue.sort((a,b)=>a.cost-b.cost);const cur=queue.shift();if(cur.cost!==best[cur.at])continue;
+ if(cur.at===to)return cur.steps;
+ for(const next of PLACES[cur.at].links){const cost=cur.cost+(beliefs[cur.at]?.roads?.[next]?.cost??2);
+ if(best[next]===undefined||cost<best[next]){best[next]=cost;queue.push({at:next,cost,steps:[...cur.steps,next]});}}
+ }return [];
+}
+// Only the actor's own state and observations cross the decision boundary.
+function view(w,id){const a=clone(w.actors[id]);return {tick:w.tick,self:a,inventory:w.items.filter(e=>e.holder===id).map(clone)};}
+function decide(v){
+ const a=v.self, local=a.beliefs[a.place], inv=v.inventory;
+ const c=(type,extra={})=>({actor:a.id,type,...extra});
+ const walk=to=>c('move',{to:path(a.place,to,a.beliefs)[0]});
+ const own=kind=>inv.find(e=>e.kind===kind);
+ const usable=(o,kind)=>o?.items.find(e=>e.kind===kind&&(e.owner==='public'||e.owner===a.id)&&(!e.holder||e.holder===a.id));
+ if(a.health<35||a.fatigue>=72){a.reason='体調・疲労を優先';return c('rest');}
+ if(a.hunger>=55){
+ const f=own('food')||usable(local,'food');if(f)return c('eat',{item:f.id,qty:1});
+ const known=Object.entries(a.beliefs).find(([p,b])=>p!==a.place&&usable(b,'food'));
+ if(known)return walk(known[0]);
+ // The kitchen is known public geography, not knowledge of its current inventory.
+ if(a.place!=='kitchen'&&!a.beliefs.kitchen)return walk('kitchen');
+ if(a.place!=='orchard')return walk('orchard');
+ return local.source>=3?c('work',{job:'forage'}):c('rest');
+ }
+ const cargo=own('food')||own('wood');
+ if(cargo){const to=cargo.kind==='food'?'kitchen':'workshop';if(a.place!==to)return walk(to);return c(cargo.owner===a.id?'give':'drop',{item:cargo.id,qty:cargo.qty,to:'public'});}
+ if(a.role==='builder'){
+ if((a.beliefs.workshop?.repair??0)>=WORKSHOP_TARGET){
+ if(a.place==='workshop'&&a.beliefs.square?.roads?.workshop?.wear>=BOARD_STRENGTH&&local.items.some(e=>e.kind==='wood'&&(e.owner==='public'||e.owner===a.id)))return c('layBoards',{road:LOW_ROAD});
+ const pantry=a.beliefs.kitchen;
+ const food=pantry?.items.filter(e=>e.kind==='food'&&e.owner==='public'&&!e.holder).reduce((s,e)=>s+e.qty,0);
+ if(food===undefined||food<3){if(a.place!=='orchard')return walk('orchard');return local.source>=3?c('work',{job:'forage'}):c('rest',{reason:'採集できる食料がない'});}
+ return c('rest',{reason:'工房の修繕が完了し、備蓄もある'});
+ }
+ if(a.place!=='workshop')return walk('workshop');
+ const tool=local.items.some(e=>e.capability==='cutting'&&(e.owner==='public'||e.owner===a.id));
+ if(!tool)return c('rest',{reason:'道具が見つからない'});
+ const wood=local.items.filter(e=>e.kind==='wood'&&(e.owner==='public'||e.owner===a.id)).reduce((s,e)=>s+e.qty,0);
+ if(wood>=2)return c('work',{job:'repair'});
+ const road=a.beliefs.square?.roads?.workshop;
+ if(wood>=1&&!road?.planks&&road?.wear>=BOARD_STRENGTH)return c('layBoards',{road:LOW_ROAD});
+ return c('rest',{reason:'木材が2個必要'});
+ }
+ if(a.role==='logger'){if(a.place!=='forest')return walk('forest');return c('work',{job:'timber'});}
+ if(a.role==='gatherer'){if(a.place!=='orchard')return walk('orchard');return c('work',{job:'forage'});}
+ // Carrier checks the public pantry before collecting provisions. No hidden stock lookup.
+ if(a.role==='carrier'){
+ if(a.place==='kitchen'&&usable(local,'food'))return c('rest');
+ if(a.place!=='orchard')return walk('orchard');return c('work',{job:'forage'});
+ }
+ return c('wait');
+}
+function step(w,count=1){
+ if(!Number.isInteger(count)||count<1||count>10000)throw Error('進める時間が不正');
+ for(let n=0;n<count;n++){
+ effect(w,{type:'tick'});
+ for(const a of Object.values(w.actors)){
+ if(a.pending){
+ if(a.pending.remaining<=0){const c=a.pending.command;a.pending=null;const reason=validate(w,c,true);
+ if(reason){a.status='中断：'+reason;emit(w,a.id,'cancel',a.name+'：'+a.status);}
+ else{const msg=apply(w,c);a.status=msg;emit(w,a.id,'complete',a.name+'：'+msg);}
+ }
+ }
+ }
+ observe(w);
+ for(const a of Object.values(w.actors)){
+ if(a.pending)continue;
+ if(a.queue[0]?.type==='travel'){
+  if(a.place===a.queue[0].to)a.queue.shift();
+  else{const next=path(a.place,a.queue[0].to,a.beliefs)[0];const r=command(w,{actor:a.id,type:'move',to:next});
+   if(!r.ok){a.queue=[];a.status='案内を中断：'+r.reason;emit(w,a.id,'cancel',a.name+'：'+a.status);}continue;}
+ }
+ if(a.queue.length){const c=a.queue.shift();const r=command(w,c);if(!r.ok){a.queue=[];a.status='案内を中断：'+r.reason;emit(w,a.id,'cancel',a.name+'：'+a.status);}continue;}
+ if(a.id==='player')continue;
+ const c=decide(view(w,a.id));
+ a.reason=c.type==='eat'?'食料を見つけ、空腹を解消':c.type==='work'?'観測した道具・資源で仕事を進める':c.type==='layBoards'?'板の破損と木材を観測し、道を補修':c.type==='rest'?(a.health<35?'負傷により作業を中断':a.role==='builder'?'資材・道具不足、または疲労。いったん休息':'備蓄あり、または疲労。いったん休息'):'必要なものがある場所を確認する';
+ const r=command(w,c);if(!r.ok){a.status=r.reason;command(w,{actor:a.id,type:'rest'});}
+ }
+ }
+ return w;
+}
+function route(w,actor,to){const a=w.actors[actor];if(!a||!PLACES[to])return fail('行き先が不正');if(a.pending)return fail('移動・作業が終わるまで待ってください');a.queue=[{actor,type:'travel',to}];return {ok:true,reason:'移動を予約しました'};}
+function guide(w,kind){
+ const a=w.actors.player;if(a.pending||a.queue.length)return fail('いまの案内が終わるまで待ってください');
+ const item=w.items.find(e=>e.holder==='player'&&e.kind===kind&&e.owner==='player');if(!item)return fail('自分の'+ITEMS[kind].name+'がありません');
+ const to=kind==='food'?'kitchen':'workshop';route(w,'player',to);
+ a.queue.push({actor:'player',type:'give',item:item.id,qty:Math.min(kind==='food'?3:2,item.qty),to:'public'});
+ return {ok:true,reason:PLACES[to].name+'へ運び、共同備蓄へ提供します'};
+}
+// Two independent worlds make the intervention visible without altering the live save.
+function compare(seed,scenario){
+ const summarize=w=>{
+  const observed=w.actors.player.beliefs.workshop;
+  return {repair:observed.repair,wood:observed.items.filter(e=>e.kind==='wood'&&e.owner==='public'&&!e.holder).reduce((n,e)=>n+e.qty,0)};
+ };
+ const run=intervention=>{
+  const w=createWorld(seed,scenario);
+  if(intervention){const r=guide(w,scenario);if(!r.ok)throw Error(r.reason);}
+  step(w,10);
+  const at10=summarize(w);
+  step(w,14);
+  const firstRepair=w.events.find(e=>e.actor==='aki'&&e.type==='complete'&&e.text.includes('工房を修繕'));
+  const delivery=w.events.find(e=>e.actor==='player'&&e.type==='give'&&e.text.includes('共同備蓄'));
+  return {at10,firstRepairTick:firstRepair?.tick??null,deliveryTick:delivery?.tick??null};
+ };
+ return {seed,scenario,control:run(false),intervention:run(true)};
+}
+// System effects are distinct from agent actions; callers cannot impersonate a
+// system effect through command(). Tick/metabolism and injury have explicit inputs.
+function effect(w,e){
+ if(e.type==='injury'){
+ const a=w.actors[e.actor];if(!a||!Number.isFinite(e.amount)||e.amount<0)return fail('負傷量が不正');
+ const before=a.health;a.health=Math.max(0,a.health-e.amount);emit(w,a.id,'injury',a.name+'が負傷した');observe(w);
+ return {ok:true,diff:[{actor:a.id,healthBefore:before,healthAfter:a.health}]};
+ }
+ if(e.type!=='tick')return fail('未定義のシステム作用');
+ w.tick++;
+ if(w.tick===12){w.roads[LOW_ROAD].wet=true;emit(w,null,'weather','雨で低地道がぬかるんだ',{witnesses:Object.keys(w.actors)});}
+ if(w.tick===24){w.roads[LOW_ROAD].wet=false;emit(w,null,'weather','雨がやみ、低地道が乾いた',{witnesses:Object.keys(w.actors)});}
+ for(const a of Object.values(w.actors)){
+ a.hunger=Math.min(100,a.hunger+0.38);a.fatigue=Math.min(100,a.fatigue+0.12);
+ if(a.pending)a.pending.remaining--;
+ }
+ emit(w,null,'system','時間経過と代謝');
+ return {ok:true,diff:[{tick:w.tick}]};
+}
+function injury(w,id,amount){return effect(w,{type:'injury',actor:id,amount});}
+function publicEvents(w,id='player'){return w.events.filter(e=>e.witnesses.includes(id)).map(({id,tick,type,text})=>({id,tick,type,text}));}
+function totals(w){const t={...w.sources};for(const e of w.items)if(e.kind in t)t[e.kind]+=e.qty;for(const k of Object.keys(t))t[k]+=w.consumed[k];return t;}
+function serialize(w){return JSON.stringify(w);}
+function load(text){
+ if(typeof text!=='string'||text.length>2000000)throw Error('セーブが大きすぎるか形式が不正です');
+ const w=JSON.parse(text);
+ if(w.schema_version!==1)throw Error('非対応のセーブ形式です（対応: schema 1）');
+ const int=n=>Number.isSafeInteger(n)&&n>=0;
+ const place=p=>typeof p==='string'&&Object.hasOwn(PLACES,p);
+ const short=s=>typeof s==='string'&&s.length<=500;
+ const actorIds=['aki','hana','mio','player','ren'];
+ // Earlier schema-1 saves have no road state. Their existing world continues on a dry road.
+ if(w.roads===undefined)w.roads=roads();
+ if(w.roads?.[LOW_ROAD]?.wear===undefined)w.roads[LOW_ROAD].wear=0;
+ if(w.roads?.[LOW_ROAD]?.crossings===undefined)w.roads[LOW_ROAD].crossings=0;
+ if(!w.roads||Object.keys(w.roads).join(',')!==LOW_ROAD||typeof w.roads[LOW_ROAD]?.wet!=='boolean'||![0,1].includes(w.roads[LOW_ROAD].planks)||!int(w.roads[LOW_ROAD].wear)||w.roads[LOW_ROAD].wear>BOARD_STRENGTH||w.roads[LOW_ROAD].planks&&w.roads[LOW_ROAD].wear>=BOARD_STRENGTH||!int(w.roads[LOW_ROAD].crossings))throw Error('道路状態が不正です');
+ const validItem=e=>e&&typeof e.id==='string'&&/^item-[1-9][0-9]*$/.test(e.id)&&Number(e.id.slice(5))<w.nextId&&Object.hasOwn(ITEMS,e.kind)&&int(e.qty)&&e.qty>0&&e.mass===ITEMS[e.kind].mass&&e.nutrition===ITEMS[e.kind].nutrition&&e.capability===ITEMS[e.kind].capability&&['public',...actorIds].includes(e.owner)&&typeof e.hidden==='boolean'&&short(e.name)&&(e.holder?actorIds.includes(e.holder)&&e.place===null:place(e.place));
+ if(!int(w.tick)||!int(w.seed)||!int(w.rng)||w.rng>0xffffffff||!int(w.nextId)||!int(w.nextEvent)||!int(w.repair)||!['food','wood'].includes(w.scenario))throw Error('セーブの時刻・識別情報が不正です');
+ if(!w.actors||Object.keys(w.actors).sort().join(',')!=='aki,hana,mio,player,ren'||!Array.isArray(w.items)||w.items.length>2000||!Array.isArray(w.events)||w.events.length>240)throw Error('セーブの世界構造が不正です');
+ for(const [id,a] of Object.entries(w.actors)){
+ if(a.id!==id||!place(a.place)||!short(a.status)||!short(a.reason)||typeof a.name!=='string'||a.name.length>40||!['visitor','builder','carrier','logger','gatherer'].includes(a.role)||a.capacity!==12||![a.health,a.hunger,a.fatigue].every(n=>Number.isFinite(n)&&n>=0&&n<=100)||!Array.isArray(a.queue)||a.queue.length>30||!a.beliefs)throw Error('主体データが不正です');
+ const validCmd=c=>c&&c.actor===id&&['move','rest','wait','work','take','give','drop','eat','layBoards','travel'].includes(c.type)&&(c.reason===undefined||short(c.reason))&&(c.type!=='move'&&c.type!=='travel'||place(c.to))&&(c.type!=='work'||Object.hasOwn(JOBS,c.job))&&(c.type!=='layBoards'||c.road===LOW_ROAD);
+ if(a.pending&&(!int(a.pending.remaining)||a.pending.remaining<1||a.pending.remaining>5||a.pending.duration!==undefined&&(!int(a.pending.duration)||a.pending.duration<1||a.pending.duration>5)||!validCmd(a.pending.command)||a.pending.command.type==='travel')||a.queue.some(c=>!validCmd(c)))throw Error('進行中の行為が不正です');
+ for(const [p,b] of Object.entries(a.beliefs)){
+  if(!place(p)||!b||!Array.isArray(b.items)||b.items.some(e=>!validItem(e))||!Array.isArray(b.actors)||!int(b.tick)||b.tick>w.tick||!(b.repair===null||int(b.repair))||!(b.source===null||int(b.source)))throw Error('観測データが不正です');
+  for(const o of b.actors){
+   if(!o||!actorIds.includes(o.id)||!place(o.place)||!short(o.name)||!short(o.status)||['hunger','fatigue','health'].some(k=>o[k]!==undefined&&(!Number.isFinite(o[k])||o[k]<0||o[k]>100)))throw Error('観測データが不正です');
+   if(o.moveTo!==undefined&&o.moveTo!==null&&(!place(o.moveTo)||!PLACES[o.place].links.includes(o.moveTo)))throw Error('観測データが不正です');
+   if(o.moveRemaining!==undefined&&o.moveRemaining!==null&&(!int(o.moveRemaining)||o.moveRemaining<1||o.moveRemaining>5))throw Error('観測データが不正です');
+   if(o.moveDuration!==undefined&&o.moveDuration!==null&&(!int(o.moveDuration)||o.moveDuration<2||o.moveDuration>5))throw Error('観測データが不正です');
+   if((o.moveTo===null)!==(o.moveRemaining===null)||o.moveDuration!==undefined&&(o.moveTo===null)!==(o.moveDuration===null))throw Error('観測データが不正です');
+  }
+  if(b.roads!==undefined){
+   if(!b.roads||Object.entries(b.roads).some(([n,r])=>!PLACES[p].links.includes(n)||!r||![2,5].includes(r.cost)||typeof r.wet!=='boolean'||![0,1].includes(r.planks)||(r.wear!==undefined&&(!int(r.wear)||r.wear>BOARD_STRENGTH||r.planks&&r.wear>=BOARD_STRENGTH))||(r.crossings!==undefined&&!int(r.crossings))))throw Error('観測データが不正です');
+  }
+ }
+ }
+ const ids=new Set();for(const e of w.items){
+ if(!validItem(e)||ids.has(e.id))throw Error('物資データが不正です');ids.add(e.id);
+ }
+ for(const key of ['food','wood'])if(!int(w.sources?.[key])||!int(w.consumed?.[key]))throw Error('物量データが不正です');
+ for(const a of Object.values(w.actors))if(mass(w,a)>a.capacity)throw Error('運搬量が上限を超えています');
+ for(const e of w.events)if(!int(e.tick)||e.tick>w.tick||!int(e.id)||e.id>=w.nextEvent||typeof e.text!=='string'||!Array.isArray(e.witnesses)||e.witnesses.some(id=>!w.actors[id]))throw Error('イベントが不正です');
+ return w;
+}
+const api={BUILD,WORKSHOP_TARGET,LOW_ROAD,BOARD_STRENGTH,PLACES,JOBS,ITEMS,createWorld,command,validate,step,observe,view,decide,path,route,guide,effect,roadCost,compare,injury,publicEvents,totals,serialize,load,mass,seen,placeOf};
+if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.Genesis=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script><script>/* DOM adapter. Rendering never advances the simulation. */
+'use strict';
+const G=Genesis,$=id=>document.getElementById(id);
+let world=G.createWorld(),running=false,timer=null;
+let lastPositions={},lastMapTick=null,renderedPositions={};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const time=t=>{const m=480+t*10;return String(Math.floor(m/60)%24).padStart(2,'0')+':'+String(m%60).padStart(2,'0');};
+const latest=beliefs=>{
+ const result={};for(const b of Object.values(beliefs))for(const o of b.actors){
+ if(!result[o.id]||b.tick>result[o.id].tick)result[o.id]={...o,tick:b.tick};
+ }return result;
+};
+const meter=(label,value,kind)=>Number.isFinite(value)?`<div class="need"><span>${label}</span><div role="meter" aria-label="${label}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round(value)}" class="need-track"><span class="${kind}" style="width:${Math.max(0,Math.min(100,value))}%"></span></div><strong>${Math.round(value)}</strong></div>`:`<div class="need unknown"><span>${label}</span><div class="need-track"></div><strong>—</strong></div>`;
+// Speech is a visible summary of action/needs, never a readout of private plans.
+function thought(o){
+ if(o.health<35)return 'けがで動けない…';
+ if(o.hunger>=55)return 'お腹が空いた…';
+ if(o.fatigue>=72)return '少し休もう';
+ if(o.moveTo)return G.PLACES[o.moveTo].name+'へ行こう';
+ if(o.status.includes('木材が2個必要'))return '木材が足りない';
+ if(o.status.includes('道具が見つからない'))return '道具がない…';
+ if(o.status.includes('板を敷いている'))return '道を直そう';
+ if(o.status.includes('修繕'))return '工房を直そう';
+ if(o.status.includes('採集'))return '食料を集めよう';
+ if(o.status.includes('切り出し'))return '木材を運ぼう';
+ if(o.status.includes('休息'))return 'ひと休み';
+ return '何ができるかな';
+}
+function message(text,error=false){$('feedback').textContent=text;$('feedback').className=error?'error':'';}
+function act(c){const r=G.command(world,{actor:'player',...c});message(r.reason,!r.ok);render();}
+function advance(n=1){G.step(world,n);render();}
+function setRunning(on){running=on;clearInterval(timer);if(on)timer=setInterval(()=>advance(),Number($('speed').value));$('play').textContent=on?'Ⅱ 一時停止':'▶ 時間を進める';render();}
+function map(){
+ const a=world.actors.player,places=G.PLACES;
+ const observed=latest(a.beliefs);renderedPositions={};
+ let svg='<svg viewBox="0 0 800 480" role="img" aria-label="集落の地図。各場所を押して移動できます"><defs><pattern id="grass" width="35" height="35" patternUnits="userSpaceOnUse"><path d="M5 15l2 -4 2 4 M24 30l2 -3" fill="none" stroke="#d9e1ca" stroke-width="1"/></pattern></defs><rect width="800" height="480" fill="url(#grass)"/><path d="M725 -30Q680 130 754 205T700 510" stroke="#c5d7cc" stroke-width="49" fill="none"/><path d="M725 -30Q680 130 754 205T700 510" stroke="#dfebe2" stroke-width="2" fill="none"/>';
+ for(let i=0;i<22;i++){const x=(i*137+25)%740,y=(i*83+16)%450;if(y>140&&y<295)continue;svg+=`<path d="M${x} ${y}l-10 20h20z" fill="#c2d0b4"/><path d="M${x} ${y+15}v12" stroke="#adbba0"/>`;}
+ for(const [id,p]of Object.entries(places))for(const n of p.links)if(id<n){
+  const low=id==='square'&&n==='workshop',road=a.beliefs.square?.roads?.workshop;
+  const tint=low&&road?.wet&&!road.planks?'#899aa1':low&&road?.planks?'#b39b6b':'#eeeadb';
+  svg+=`<path d="M${p.x*8} ${p.y*4.8}L${places[n].x*8} ${places[n].y*4.8}" stroke="#d8d1bb" stroke-width="17" stroke-linecap="round"/><path d="M${p.x*8} ${p.y*4.8}L${places[n].x*8} ${places[n].y*4.8}" stroke="${tint}" stroke-width="12" stroke-linecap="round"${low&&road?.wet&&!road.planks?' stroke-dasharray="13 6"':''}/>`;
+ }
+ for(const [id,p]of Object.entries(places)){
+ const x=p.x*8,y=p.y*4.8,seen=a.beliefs[id],fresh=seen?.tick===world.tick;
+ const stage=id==='workshop'?Math.min(G.WORKSHOP_TARGET,seen?.repair??0):0;
+ const roof=id==='workshop'?`<path d="M${x-46} ${y-27}l14 -13h65l14 13" fill="${stage===3?'#648b6a':stage?'#ba9456':'#a58b75'}" stroke="#6f755e" stroke-width="2"/><path d="M${x-27} ${y-39}v11 M${x+7} ${y-39}v11" stroke="${stage>=1?'#f1d797':'#705b52'}" stroke-width="${stage>=1?5:2}"/>${stage>=2?`<path d="M${x+31} ${y-39}v11" stroke="#f1d797" stroke-width="5"/>`:''}${stage===3?`<path d="M${x-46} ${y-27}h92" stroke="#456e52" stroke-width="4"/>`:''}`:'';
+ svg+=`<g class="place" data-place="${id}" role="button" tabindex="0" aria-label="${p.name}へ移動${id==='workshop'&&seen?'、修繕'+stage+'段階':''}"><rect x="${x-49}" y="${y-27}" width="98" height="51" rx="7" fill="${a.place===id?'#f2e4c5':fresh?'#faf9f0':'#e1e4d7'}" stroke="${a.place===id?'#b88b4f':'#bdc7ad'}"/>${roof}<text x="${x}" y="${y-6}" text-anchor="middle" fill="#344c3a" font-size="14">${p.name}</text><text x="${x}" y="${y+13}" text-anchor="middle" fill="#78816d" font-size="9">${id==='square'?'集落の道が集まる場所':id==='workshop'&&seen?['屋根が傷んでいる','梁を補修中','屋根を補修中','修繕完了'][stage]:seen?(fresh?'観察中':'以前の記録'):'未観測'}</text></g>`;
+ }
+ // Fresh actors travel along the road. Old memories stay faint at the last seen place.
+ const atPlace={};for(const o of Object.values(observed)){
+  const origin=places[o.place];if(!origin)continue;
+  const index=atPlace[o.place]||0;atPlace[o.place]=index+1;
+  const offset=(index%3-1)*18;
+  const destination=o.tick===world.tick&&o.moveTo?places[o.moveTo]:null;
+  const progress=destination?Math.max(0,Math.min(1,((o.moveDuration??2)-o.moveRemaining)/(o.moveDuration??2))):0;
+  const x=(origin.x+(destination?.x-origin.x||0)*progress)*8+offset;
+  const y=(origin.y+(destination?.y-origin.y||0)*progress)*4.8+38;
+  const fresh=o.tick===world.tick,player=o.id==='player';
+  renderedPositions[o.id]={x,y,fresh};
+  const bubble=fresh&&!player?`<g class="speech"><rect x="-49" y="-50" width="98" height="24" rx="10"/><path d="M-6 -26l6 7 5 -7"/><text x="0" y="-34" text-anchor="middle">${esc(thought(o))}</text></g>`:'';
+  svg+=`<g data-actor="${o.id}" class="map-actor${fresh?'':' memory'}" transform="translate(${x} ${y})" aria-label="${esc(o.name)}、${fresh?esc(o.status):'以前の記録'}">${bubble}<circle r="12" fill="${player?'#b98548':'#4c7158'}" stroke="#fffdf5" stroke-width="2"/><text y="4" text-anchor="middle" fill="white" font-size="10">${esc(o.name[0])}</text></g>`;
+ }
+ return svg+'</svg>';
+}
+function animateResidents(){
+ if(world.tick===lastMapTick+1&&!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches){
+  for(const [id,p] of Object.entries(renderedPositions)){
+   const old=lastPositions[id];if(!old?.fresh||!p.fresh||Math.hypot(old.x-p.x,old.y-p.y)<1)continue;
+   const el=$('map').querySelector(`[data-actor="${id}"]`);
+   el?.animate([{transform:`translate(${old.x}px,${old.y}px)`},{transform:`translate(${p.x}px,${p.y}px)`}],{duration:running?Math.min(650,Number($('speed').value)*.82):450,easing:'ease-out'});
+  }
+ }
+ lastPositions=renderedPositions;lastMapTick=world.tick;
+}
+function render(){
+ const a=world.actors.player,b=a.beliefs;
+ $('day').textContent=Math.floor((480+world.tick*10)/1440)+1+'日目';$('clock').textContent=time(world.tick);$('weather').textContent=(world.roads[G.LOW_ROAD].wet?'雨':'晴れ')+' · '+(running?'暮らしが進んでいます':'一時停止中');$('position').textContent='あなた：'+G.PLACES[a.place].name;
+ $('map').innerHTML=map();animateResidents();
+ const stock=(p,k)=>b[p]?.items.filter(e=>!e.holder&&e.kind===k&&e.owner==='public').reduce((s,e)=>s+e.qty,0);
+ $('foodCount').textContent=(stock('kitchen','food')??'?')+'個';$('woodCount').textContent=(stock('workshop','wood')??'?')+'個';
+ const repair=b.workshop?.repair,stage=Math.min(G.WORKSHOP_TARGET,repair??0);
+ $('repairCount').textContent=repair===undefined?'未観測':stage+'/'+G.WORKSHOP_TARGET;
+ $('workshopState').textContent=repair===undefined?'未観測':['傷んだ屋根','梁を補修中','屋根を補修中','修繕完了'][stage];
+ $('workshopFill').style.width=(stage/G.WORKSHOP_TARGET*100)+'%';
+ $('workshopHint').textContent=repair===undefined?'工房を観察すると様子が分かります。':stage===3?'アキは修繕を終えました。食料が足りなければ採集を手伝います。':'木材2個と道具で1段階ずつ直ります。';
+ const road=b.square?.roads?.workshop;
+ $('roadState').textContent=road?(road.wear>=G.BOARD_STRENGTH&&!road.planks?'通行で板が傷んだ。木材があれば補修できる'+(road.wet?'（直行5刻・迂回4刻）':'') :road.wet&&!road.planks?'低地道はぬかるみ、工房へは台所経由が早い（直行5刻・迂回4刻）':road.planks?'板が敷かれ、工房への近道を通れる（2刻・雨中の通行あと'+(G.BOARD_STRENGTH-(road.wear??0))+'回）':'低地道は通れる（2刻）')+' · 累計通行'+(road.crossings??0)+'回'+(b.square.tick===world.tick?'':' · 前に見た記録'):'低地道はまだ観測していません。';
+ $('situation').textContent=world.scenario==='food'?'共同台所の食料が足りない朝。アキは空腹で仕事に集中できません。あなたの食料を分けると、どう変わるでしょう。':'工房に木材が足りない朝。アキは資材を待っています。手持ちの木材を届けると、修繕は始まるでしょうか。';
+ $('playerState').textContent=`${a.status} / 荷物 ${G.mass(world,a)} / ${a.capacity}kg`;
+ $('playerNeeds').innerHTML=meter('空腹',a.hunger,'hunger')+meter('疲労',a.fatigue,'fatigue');
+ const items=world.items.filter(e=>e.holder==='player');
+ $('inventory').innerHTML=items.length?items.map(e=>`<div class="inventory-item"><span>${esc(e.name)} ×${e.qty}${e.owner==='public'?'（共同）':''}</span><span><button data-item="${e.id}" data-type="drop">置く</button>${e.owner==='player'?`<button data-item="${e.id}" data-type="give">提供</button>`:''}${e.nutrition?`<button data-item="${e.id}" data-type="eat">食べる</button>`:''}</span></div>`).join(''):'<p class="muted">手荷物はありません。</p>';
+ const old=$('ground').value;
+ $('ground').innerHTML='<option value="">物資を選ぶ</option>'+world.items.filter(e=>!e.holder&&e.place===a.place&&G.seen(world,a,e)).map(e=>`<option value="${e.id}">${esc(e.name)} ×${e.qty}（${e.owner==='public'?'共同':'個人所有'}）</option>`).join('');
+ if([...$('ground').options].some(o=>o.value===old))$('ground').value=old;
+ const roles={aki:'修繕係',mio:'配給係',ren:'木こり',hana:'採集係'};
+ $('residents').innerHTML=Object.entries(roles).map(([id,role])=>{
+ const o=latest(b)[id];
+ return `<article class="card"><span class="jobtag">${role}</span><b>${esc(o?.name||'未確認')}</b><p>${esc(o?.status||'まだ会っていません')}</p><small>${o?esc(G.PLACES[o.place].name)+' · '+(o.tick===world.tick?'いま見える':time(o.tick)+'の記録'):'近づいて観察してみましょう'}</small>${o?meter('空腹',o.hunger,'hunger')+meter('疲労',o.fatigue,'fatigue'):''}</article>`;
+ }).join('');
+ $('log').innerHTML=G.publicEvents(world).slice(-24).reverse().map(e=>`<li><time>${time(e.tick)}</time>${esc(e.text)}</li>`).join('')||'<li>まだ出来事はありません。時間を進めてみましょう。</li>';
+ $('debug').textContent=JSON.stringify({build:G.BUILD,tick:world.tick,seed:world.seed,rng:world.rng,repair:world.repair,totals:G.totals(world),actors:Object.values(world.actors).map(({id,place,hunger,fatigue,health,pending,reason})=>({id,place,hunger,fatigue,health,pending,reason}))},null,2);
+}
+$('play').onclick=()=>setRunning(!running);$('speed').onchange=()=>setRunning(running);$('step').onclick=()=>advance();$('step10').onclick=()=>advance(10);
+$('foodGuide').onclick=()=>{const r=G.guide(world,'food');message(r.reason+(r.ok?'。時間を進めてください。':''),!r.ok);render();};
+$('woodGuide').onclick=()=>{const r=G.guide(world,'wood');message(r.reason+(r.ok?'。時間を進めてください。':''),!r.ok);render();};
+$('boardRoad').onclick=()=>act({type:'layBoards',road:G.LOW_ROAD});
+function mapClick(e){const el=e.target.closest('[data-place]');if(!el)return;const r=G.route(world,'player',el.dataset.place);message(r.reason+(r.ok?'。時間を進めると歩き始めます。':''),!r.ok);render();}
+$('map').onclick=mapClick;$('map').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();mapClick(e);}};
+$('inventory').onclick=e=>{const b=e.target.closest('button[data-item]');if(b)act({type:b.dataset.type,item:b.dataset.item,qty:1,to:'public'});};
+$('take').onclick=()=>act({type:'take',item:$('ground').value,qty:1});$('eatGround').onclick=()=>act({type:'eat',item:$('ground').value,qty:1});$('rest').onclick=()=>act({type:'rest'});$('work').onclick=()=>act({type:'work',job:$('job').value});
+$('cancel').onclick=()=>{world.actors.player.queue=[];message('予約した案内を解除しました。実行中の一歩・作業は完了します。');render();};
+$('reset').onclick=()=>{try{const next=G.createWorld(Number($('seed').value),$('scenario').value);setRunning(false);world=next;render();message('同じ朝に戻りました。今度は何を変えますか？');}catch(e){message(e.message,true);}};
+$('compare').onclick=()=>{
+ try{
+  const result=G.compare(Number($('seed').value),$('scenario').value);
+  const row=(label,r)=>`<tr><th scope="row">${label}</th><td>${r.at10.repair}回</td><td>${r.at10.wood}個</td><td>${r.firstRepairTick===null?'24刻以内には未完了':r.firstRepairTick+'刻'}</td></tr>`;
+  $('comparison').innerHTML=`<p>seed ${result.seed}・${result.scenario==='wood'?'木材':'食料'}不足。両方とも同じ朝から開始。</p><div class="comparison-scroll"><table><thead><tr><th></th><th>10刻後の修繕</th><th>10刻後の木材</th><th>最初の修繕</th></tr></thead><tbody>${row('介入なし',result.control)}${row('届ける',result.intervention)}</tbody></table></div><p>届けた時刻：${result.intervention.deliveryTick??'24刻以内には未到着'}刻。木材はNPCも運ぶため、残量だけで介入の効果を判断しないでください。</p>`;
+ }catch(e){$('comparison').textContent='比較できません：'+e.message;}
+};
+for(const id of ['seed','scenario'])$(id).onchange=()=>$('comparison').replaceChildren();
+$('save').onclick=()=>{try{localStorage.setItem('genesis-p0-save',G.serialize(world));message('この端末に保存しました。');}catch(e){message('ブラウザー保存が使えません。「セーブを書出す」を使ってください。',true);}};
+function replace(text){const next=G.load(text);setRunning(false);world=next;$('seed').value=world.seed;$('scenario').value=world.scenario;render();message('読み込みました。時刻は進めていません。');}
+$('load').onclick=()=>{try{const saved=localStorage.getItem('genesis-p0-save');if(!saved)throw Error('保存データがありません');replace(saved);}catch(e){message('読込失敗：'+e.message,true);}};
+function download(name,text){const url=URL.createObjectURL(new Blob([text],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+$('export').onclick=()=>download('Genesis_save_'+world.tick+'.json',G.serialize(world));
+$('import').onchange=async e=>{try{const f=e.target.files[0];if(!f)return;if(f.size>2000000)throw Error('2MB以下のセーブを選んでください');replace(await f.text());}catch(err){message('読込失敗：'+err.message,true);}finally{e.target.value='';}};
+render();
+</script></body></html>
